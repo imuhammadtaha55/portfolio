@@ -1,0 +1,13 @@
+name: Sync Changes to VS Code
+on: [push]  # Triggers on every push to GitHub
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4  # Checks out your repo
+      - name: Pull changes in VS Code
+        run: |
+          git config --global user.name "Your Name"
+          git config --global user.email "your-email@example.com"
+          git pull
